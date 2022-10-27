@@ -55,7 +55,6 @@ resource "oci_core_security_list" "security_list" {
     }
   }
 
-  # dns port
   ingress_security_rules {
     protocol = "6"
     source   = "0.0.0.0/0"
@@ -63,6 +62,15 @@ resource "oci_core_security_list" "security_list" {
     tcp_options {
       max = "873"
       min = "873"
+    }
+  }
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "8080"
+      min = "8080"
     }
   }
 }

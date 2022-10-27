@@ -71,6 +71,7 @@ resource "null_resource" "remote-exec" {
       "sudo apt-get update",
       "sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin",
       "git clone https://github.com/mchangrh/sb-mirror.git",
+      "rm docker-compose.yml && wget https://gist.githubusercontent.com/bruvv/7510bc77874849abb43cf18d380c34ce/raw/cbc2eea3a58f408f93b96e42cc78c6320f07a49b/docker-compose.yml",
       "sudo docker compose up -d",
       "echo Done!",
       "sudo /usr/sbin/shutdown -r 1"
